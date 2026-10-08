@@ -19,13 +19,11 @@ public class JanelaArtista extends JFrame {
     private JPanel contentPane;
 
     private JTextField txtDataNasc;
-    private JTextField txtConjuge;
     private JTextField txtNome;
     private JTextField txtQuant_albuns;
     private JTextField txtAlbum;
     private JTextField txtDataFalecimento;
     private JTextField txtLocalNasc;
-    private JTextField txtIdade;
 
     private JButton btnCadastrar;
     private JButton btnLimpar;
@@ -38,7 +36,7 @@ public class JanelaArtista extends JFrame {
         setBounds(100, 100, 533, 676);
 
         contentPane = new JPanel();
-        contentPane.setBackground(new Color(255, 187, 119));
+        contentPane.setBackground(new Color(255, 255, 255));
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         setContentPane(contentPane);
         contentPane.setLayout(null);
@@ -69,7 +67,7 @@ public class JanelaArtista extends JFrame {
         contentPane.add(txtNome);
 
         JLabel lblDataNascimento = new JLabel(
-                "Data de nascimento");
+                "Ano de nascimento");
         lblDataNascimento.setFont(
                 new Font("Tahoma", Font.PLAIN, 11));
         lblDataNascimento.setBounds(36, 193, 112, 20);
@@ -80,75 +78,56 @@ public class JanelaArtista extends JFrame {
         txtDataNasc.setColumns(10);
         contentPane.add(txtDataNasc);
 
-        JLabel lblConjugeAtual = new JLabel(
-                "Cônjuges");
-        lblConjugeAtual.setBounds(36, 252, 90, 14);
-        contentPane.add(lblConjugeAtual);
-
-        txtConjuge = new JTextField();
-        txtConjuge.setBounds(36, 266, 177, 20);
-        txtConjuge.setColumns(10);
-        contentPane.add(txtConjuge);
-
         JLabel lblAlbum = new JLabel(
                 "Álbum mais popular");
-        lblAlbum.setBounds(36, 309, 118, 14);
+        lblAlbum.setBounds(37, 252, 118, 14);
         contentPane.add(lblAlbum);
 
         txtAlbum = new JTextField();
-        txtAlbum.setBounds(36, 324, 176, 20);
+        txtAlbum.setBounds(37, 267, 176, 20);
         txtAlbum.setColumns(10);
         contentPane.add(txtAlbum);
 
         JLabel lblQuantAlbuns = new JLabel(
                 "Quantidade de álbuns");
-        lblQuantAlbuns.setBounds(257, 311, 136, 14);
+        lblQuantAlbuns.setBounds(256, 252, 136, 14);
         contentPane.add(lblQuantAlbuns);
 
         txtQuant_albuns = new JTextField();
-        txtQuant_albuns.setBounds(257, 324, 177, 20);
+        txtQuant_albuns.setBounds(256, 265, 177, 20);
         txtQuant_albuns.setColumns(10);
         contentPane.add(txtQuant_albuns);
 
         JLabel lblDataFalecimento = new JLabel(
                 "Data de falecimento");
-        lblDataFalecimento.setBounds(257, 197, 176, 14);
+        lblDataFalecimento.setBounds(257, 140, 176, 14);
         contentPane.add(lblDataFalecimento);
 
         txtDataFalecimento = new JTextField();
-        txtDataFalecimento.setBounds(257, 211, 176, 20);
+        txtDataFalecimento.setBounds(257, 153, 176, 20);
         txtDataFalecimento.setColumns(10);
         contentPane.add(txtDataFalecimento);
 
         JLabel lblLocalNasc = new JLabel(
                 "Local de nascimento");
-        lblLocalNasc.setBounds(257, 252, 177, 14);
+        lblLocalNasc.setBounds(256, 193, 177, 14);
         contentPane.add(lblLocalNasc);
 
         txtLocalNasc = new JTextField();
-        txtLocalNasc.setBounds(257, 266, 177, 20);
+        txtLocalNasc.setBounds(256, 207, 177, 20);
         txtLocalNasc.setColumns(10);
         contentPane.add(txtLocalNasc);
 
-        JLabel lblIdade = new JLabel("Idade");
-        lblIdade.setBounds(257, 140, 177, 14);
-        contentPane.add(lblIdade);
-
-        txtIdade = new JTextField();
-        txtIdade.setBounds(257, 153, 177, 20);
-        txtIdade.setColumns(10);
-        contentPane.add(txtIdade);
-
         btnCadastrar = new JButton("Cadastrar");
-        btnCadastrar.setBounds(36, 365, 98, 27);
+        btnCadastrar.setBounds(36, 319, 98, 27);
         contentPane.add(btnCadastrar);
 
         btnLimpar = new JButton("Limpar");
-        btnLimpar.setBounds(170, 365, 98, 27);
+        btnLimpar.setBounds(170, 319, 98, 27);
         contentPane.add(btnLimpar);
 
         btnFechar = new JButton("Fechar");
-        btnFechar.setBounds(307, 365, 98, 27);
+        btnFechar.setBounds(307, 319, 98, 27);
         contentPane.add(btnFechar);
     }
 
@@ -172,10 +151,6 @@ public class JanelaArtista extends JFrame {
         return txtDataNasc;
     }
 
-    public JTextField getTxtConjuge() {
-        return txtConjuge;
-    }
-
     public JTextField getTxtQuant_albuns() {
         return txtQuant_albuns;
     }
@@ -192,9 +167,6 @@ public class JanelaArtista extends JFrame {
         return txtLocalNasc;
     }
 
-    public JTextField getTxtIdade() {
-        return txtIdade;
-    }
 
     public void mostrarMensagem(String texto) {
         JOptionPane.showMessageDialog(this, texto);
@@ -212,13 +184,10 @@ public class JanelaArtista extends JFrame {
 
         txtNome.setText("");
         txtDataNasc.setText("");
-        txtConjuge.setText("");
         txtQuant_albuns.setText("");
         txtAlbum.setText("");
         txtDataFalecimento.setText("");
         txtLocalNasc.setText("");
-        txtIdade.setText("");
-
         txtNome.requestFocus();
     }
 

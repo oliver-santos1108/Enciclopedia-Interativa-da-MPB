@@ -6,11 +6,9 @@ public class Artista {
 
     private String nome;
     private int dataNascimento;
-    private String conjugues;
     private int quantAlbuns;
     private String albuns;
     private int dataFalecimento;
-    private int idade;
     private String localNascimento;
 
     public String getNome() {
@@ -27,14 +25,6 @@ public class Artista {
 
     public void setDataNascimento(int dataNascimento) {
         this.dataNascimento = dataNascimento;
-    }
-
-    public String getConjugues() {
-        return conjugues;
-    }
-
-    public void setConjugues(String conjugues) {
-        this.conjugues = conjugues;
     }
 
     public int getQuantAlbuns() {
@@ -59,14 +49,6 @@ public class Artista {
 
     public void setDataFalecimento(int dataFalecimento) {
         this.dataFalecimento = dataFalecimento;
-    }
-
-    public int getIdade() {
-        return idade;
-    }
-
-    public void setIdade(int idade) {
-        this.idade = idade;
     }
 
     public String getLocalNascimento() {
@@ -96,10 +78,6 @@ public class Artista {
         if (localNascimento == null || localNascimento.trim().isEmpty()) {
             return "Preencha o local de nascimento.";
         }
-
-        if (idade <= 0) {
-            return "Preencha a idade do artista.";
-        }
-        return null;
+		return albuns;
     }
-}
+  }

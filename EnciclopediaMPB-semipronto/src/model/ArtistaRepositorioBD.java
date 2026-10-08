@@ -38,9 +38,9 @@ public class ArtistaRepositorioBD {
         }
 
         String sql ="INSERT INTO artista "
-                + "(nome, data_nascimento, conjugues, quant_albuns, "
-                + "albuns, data_falecimento, idade, local_nascimento) "
-                + "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+                + "(nome, data_nascimento, quant_albuns, "
+                + "albuns, data_falecimento, local_nascimento) "
+                + "VALUES (?, ?, ?, ?, ?, ?)";
 
         try (
         	Connection con = abrir();
@@ -49,19 +49,15 @@ public class ArtistaRepositorioBD {
 
             ps.setString(1, artista.getNome().trim());
             ps.setInt(2, artista.getDataNascimento());
-            ps.setString(3,artista.getConjugues() == null ? "" : artista.getConjugues().trim()
-            );
-
-            ps.setInt(4, artista.getQuantAlbuns());
-            ps.setString(5, artista.getAlbuns().trim());
+            ps.setInt(3, artista.getQuantAlbuns());
+            ps.setString(4, artista.getAlbuns().trim());
 
             if (artista.getDataFalecimento() == 0) {
-                ps.setNull(6, java.sql.Types.INTEGER);
+                ps.setNull(5, java.sql.Types.INTEGER);
             } else {
-                ps.setInt(6, artista.getDataFalecimento());
+                ps.setInt(5, artista.getDataFalecimento());
             }
-            ps.setInt(7, artista.getIdade());
-            ps.setString(8, artista.getLocalNascimento().trim());
+            ps.setString(6, artista.getLocalNascimento().trim());
             ps.executeUpdate();
             
         } catch (SQLException erro) {
@@ -95,8 +91,8 @@ public class ArtistaRepositorioBD {
     }
     public List<Artista> listarTodos() {
         String sql =
-                "SELECT nome, data_nascimento, conjugues, quant_albuns, "
-                + "albuns, data_falecimento, idade, local_nascimento "
+                "SELECT nome, data_nascimento, quant_albuns, "
+                + "albuns, data_falecimento, local_nascimento "
                 + "FROM artista ORDER BY nome";
 
         List<Artista> lista = new ArrayList<>();
@@ -111,8 +107,6 @@ public class ArtistaRepositorioBD {
                 artista.setDataNascimento(rs.getInt("data_nascimento")
                 );
 
-                artista.setConjugues(rs.getString("conjugues")
-                );
 
                 artista.setQuantAlbuns(rs.getInt("quant_albuns")
                 );
@@ -127,10 +121,6 @@ public class ArtistaRepositorioBD {
                 }
 
                 artista.setDataFalecimento(dataFalecimento);
-
-                artista.setIdade(
-                        rs.getInt("idade")
-                );
 
                 artista.setLocalNascimento(
                         rs.getString("local_nascimento")

@@ -40,10 +40,42 @@ public class ArtistaController implements ActionListener {
     private void cadastrar() {
         try {
             Artista artista = new Artista();
+     
+            artista.setNome(view.getTxtNome().getText());
+            artista.setDataNascimento(Integer.parseInt(view.getTxtDataNasc().getText().trim()));
+            artista.setQuantAlbuns(Integer.parseInt(view.getTxtQuant_albuns().getText().trim()));
+            artista.setAlbuns(view.getTxtAlbum().getText());
+
+            String dataFalecimento = view.getTxtDataFalecimento().getText().trim();
+            if (dataFalecimento.isEmpty()) {
+                artista.setDataFalecimento(0);
+            } else {
+                artista.setDataFalecimento(Integer.parseInt(dataFalecimento));
+            }
+
+            artista.setLocalNascimento(view.getTxtLocalNasc().getText());
+
+            repositorio.salvar(artista);
+
+            view.mostrarMensagem("Artista cadastrado com sucesso!\n"
+                    + "Total de artistas cadastrados: "
+                    + repositorio.contar());
+            view.limparCampos();
+
+        } catch (NumberFormatException erro) {
+            view.mostrarErro("Preencha os campos numéricos (Data de Nascimento e Quantidade de Álbuns) corretamente.");
+        } catch (IllegalArgumentException erro) {
+            view.mostrarErro(erro.getMessage());
+        } catch (Exception erro) {
+            view.mostrarErro("Erro ao acessar o banco de dados: " + erro.getMessage());
+        }
+    }
+   /* private void cadastrar() {
+        try {
+            Artista artista = new Artista();
             artista.setNome(view.getTxtNome().getText());
             artista.setDataNascimento(Integer.parseInt(view.getTxtDataNasc().getText().trim()));
 
-            artista.setConjugues(view.getTxtConjuge().getText());
 
             artista.setQuantAlbuns(Integer.parseInt(view.getTxtQuant_albuns().getText().trim()));
 
@@ -56,8 +88,6 @@ public class ArtistaController implements ActionListener {
             } else {
                 artista.setDataFalecimento(Integer.parseInt(dataFalecimento));
             }
-
-            artista.setIdade(Integer.parseInt(view.getTxtIdade().getText().trim()));
 
             artista.setLocalNascimento(view.getTxtLocalNasc().getText());
 
@@ -77,5 +107,5 @@ public class ArtistaController implements ActionListener {
 
             view.mostrarErro(erro.getMessage());
         }
-    }
+    }*/
 }
