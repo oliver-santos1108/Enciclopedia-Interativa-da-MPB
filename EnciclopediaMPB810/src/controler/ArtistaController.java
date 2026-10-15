@@ -63,7 +63,7 @@ public class ArtistaController implements ActionListener {
             view.limparCampos();
 
         } catch (NumberFormatException erro) {
-            view.mostrarErro("Preencha os campos numéricos (Data de Nascimento e Quantidade de Álbuns) corretamente.");
+            view.mostrarErro("Preencha os campos numéricos corretamente.");
         } catch (IllegalArgumentException erro) {
             view.mostrarErro(erro.getMessage());
         } catch (Exception erro) {

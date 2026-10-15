@@ -11,6 +11,10 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
+import java.awt.GridLayout;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.SwingConstants;
 
 public class JanelaArtista extends JFrame {
 
@@ -28,6 +32,20 @@ public class JanelaArtista extends JFrame {
     private JButton btnCadastrar;
     private JButton btnLimpar;
     private JButton btnFechar;
+    private JLabel label;
+    private JLabel label_1;
+    private JLabel label_2;
+    private JLabel label_3;
+    private JLabel label_4;
+    private JLabel label_5;
+    private JLabel label_7;
+    private JLabel label_9;
+    private JLabel label_10;
+    private JLabel label_11;
+    private JLabel label_12;
+    private JLabel label_13;
+    private JLabel label_16;
+    private JLabel label_17;
 
     public JanelaArtista() {
 
@@ -39,96 +57,126 @@ public class JanelaArtista extends JFrame {
         contentPane.setBackground(new Color(255, 255, 255));
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         setContentPane(contentPane);
-        contentPane.setLayout(null);
-
-        JLabel lblEnciclopedia = new JLabel(
-                "Enciclopédia Interativa da MPB");
-        lblEnciclopedia.setForeground(Color.BLACK);
-        lblEnciclopedia.setFont(
-                new Font("Yu Gothic Medium", Font.BOLD, 28));
-        lblEnciclopedia.setBounds(36, 35, 458, 63);
-        contentPane.add(lblEnciclopedia);
+        contentPane.setLayout(new GridLayout(0, 4, 0, 0));
+        
+        label = new JLabel("");
+        contentPane.add(label);
+        
+                JLabel lblEnciclopedia = new JLabel(
+                        "Enciclopédia Interativa da MPB");
+                lblEnciclopedia.setForeground(Color.BLACK);
+                lblEnciclopedia.setFont(
+                        new Font("Yu Gothic Medium", Font.BOLD, 28));
+                contentPane.add(lblEnciclopedia);
+        
+        label_1 = new JLabel("");
+        contentPane.add(label_1);
+        
+        label_2 = new JLabel("");
+        contentPane.add(label_2);
 
         JLabel lblArtista = new JLabel("Artista");
+        lblArtista.setHorizontalAlignment(SwingConstants.CENTER);
         lblArtista.setFont(
                 new Font("Yu Gothic Medium", Font.BOLD, 16));
-        lblArtista.setBounds(36, 109, 112, 27);
         contentPane.add(lblArtista);
+        
+        label_3 = new JLabel("");
+        contentPane.add(label_3);
+        
+        label_4 = new JLabel("");
+        contentPane.add(label_4);
+        
+        label_5 = new JLabel("");
+        contentPane.add(label_5);
 
         JLabel lblNomeArtista = new JLabel("Nome");
         lblNomeArtista.setFont(
                 new Font("Tahoma", Font.PLAIN, 11));
-        lblNomeArtista.setBounds(36, 140, 46, 14);
         contentPane.add(lblNomeArtista);
-
-        txtNome = new JTextField();
-        txtNome.setBounds(36, 153, 177, 20);
-        txtNome.setColumns(10);
-        contentPane.add(txtNome);
-
-        JLabel lblDataNascimento = new JLabel(
-                "Ano de nascimento");
-        lblDataNascimento.setFont(
-                new Font("Tahoma", Font.PLAIN, 11));
-        lblDataNascimento.setBounds(36, 193, 112, 20);
-        contentPane.add(lblDataNascimento);
-
-        txtDataNasc = new JTextField();
-        txtDataNasc.setBounds(36, 211, 177, 20);
-        txtDataNasc.setColumns(10);
-        contentPane.add(txtDataNasc);
-
-        JLabel lblAlbum = new JLabel(
-                "Álbum mais popular");
-        lblAlbum.setBounds(37, 252, 118, 14);
-        contentPane.add(lblAlbum);
-
-        txtAlbum = new JTextField();
-        txtAlbum.setBounds(37, 267, 176, 20);
-        txtAlbum.setColumns(10);
-        contentPane.add(txtAlbum);
-
-        JLabel lblQuantAlbuns = new JLabel(
-                "Quantidade de álbuns");
-        lblQuantAlbuns.setBounds(256, 252, 136, 14);
-        contentPane.add(lblQuantAlbuns);
-
-        txtQuant_albuns = new JTextField();
-        txtQuant_albuns.setBounds(256, 265, 177, 20);
-        txtQuant_albuns.setColumns(10);
-        contentPane.add(txtQuant_albuns);
-
-        JLabel lblDataFalecimento = new JLabel(
-                "Data de falecimento");
-        lblDataFalecimento.setBounds(257, 140, 176, 14);
-        contentPane.add(lblDataFalecimento);
-
-        txtDataFalecimento = new JTextField();
-        txtDataFalecimento.setBounds(257, 153, 176, 20);
-        txtDataFalecimento.setColumns(10);
-        contentPane.add(txtDataFalecimento);
-
-        JLabel lblLocalNasc = new JLabel(
-                "Local de nascimento");
-        lblLocalNasc.setBounds(256, 193, 177, 14);
-        contentPane.add(lblLocalNasc);
-
-        txtLocalNasc = new JTextField();
-        txtLocalNasc.setBounds(256, 207, 177, 20);
-        txtLocalNasc.setColumns(10);
-        contentPane.add(txtLocalNasc);
-
-        btnCadastrar = new JButton("Cadastrar");
-        btnCadastrar.setBounds(36, 319, 98, 27);
-        contentPane.add(btnCadastrar);
-
-        btnLimpar = new JButton("Limpar");
-        btnLimpar.setBounds(170, 319, 98, 27);
-        contentPane.add(btnLimpar);
-
-        btnFechar = new JButton("Fechar");
-        btnFechar.setBounds(307, 319, 98, 27);
-        contentPane.add(btnFechar);
+        
+                txtNome = new JTextField();
+                txtNome.setColumns(10);
+                contentPane.add(txtNome);
+        
+                JLabel lblDataFalecimento = new JLabel(
+                        "Data de falecimento");
+                contentPane.add(lblDataFalecimento);
+        
+                txtDataFalecimento = new JTextField();
+                txtDataFalecimento.setColumns(10);
+                contentPane.add(txtDataFalecimento);
+                
+                        JLabel lblDataNascimento = new JLabel(
+                                "Ano de nascimento");
+                        lblDataNascimento.setFont(
+                                new Font("Tahoma", Font.PLAIN, 11));
+                        contentPane.add(lblDataNascimento);
+        
+                txtDataNasc = new JTextField();
+                txtDataNasc.setColumns(10);
+                contentPane.add(txtDataNasc);
+        
+                JLabel lblLocalNasc = new JLabel(
+                        "Local de nascimento");
+                contentPane.add(lblLocalNasc);
+        
+                txtLocalNasc = new JTextField();
+                txtLocalNasc.setColumns(10);
+                contentPane.add(txtLocalNasc);
+        
+                JLabel lblAlbum = new JLabel(
+                        "Álbum mais popular");
+                contentPane.add(lblAlbum);
+        
+                txtAlbum = new JTextField();
+                txtAlbum.setColumns(10);
+                contentPane.add(txtAlbum);
+        
+                JLabel lblQuantAlbuns = new JLabel(
+                        "Quantidade de álbuns");
+                contentPane.add(lblQuantAlbuns);
+        
+                txtQuant_albuns = new JTextField();
+                txtQuant_albuns.setColumns(10);
+                contentPane.add(txtQuant_albuns);
+        
+        label_7 = new JLabel("");
+        contentPane.add(label_7);
+        
+        label_9 = new JLabel("");
+        contentPane.add(label_9);
+        
+        label_10 = new JLabel("");
+        contentPane.add(label_10);
+        
+        label_11 = new JLabel("");
+        contentPane.add(label_11);
+        
+                btnCadastrar = new JButton("Cadastrar");
+                btnCadastrar.addActionListener(new ActionListener() {
+                	public void actionPerformed(ActionEvent e) {
+                	}
+                });
+                contentPane.add(btnCadastrar);
+        
+                btnLimpar = new JButton("Limpar");
+                contentPane.add(btnLimpar);
+        
+                btnFechar = new JButton("Fechar");
+                contentPane.add(btnFechar);
+        
+        label_12 = new JLabel("");
+        contentPane.add(label_12);
+        
+        label_13 = new JLabel("");
+        contentPane.add(label_13);
+        
+        label_16 = new JLabel("");
+        contentPane.add(label_16);
+        
+        label_17 = new JLabel("");
+        contentPane.add(label_17);
     }
 
     public JButton getBtnCadastrar() {
