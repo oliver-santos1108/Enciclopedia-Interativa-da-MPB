@@ -1,7 +1,11 @@
 package view;
 
 import java.awt.Color;
+import javax.swing.border.LineBorder;
 import java.awt.Font;
+import javax.swing.JTable;
+import javax.swing.JScrollPane;
+import javax.swing.table.DefaultTableModel;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -39,6 +43,9 @@ public class JanelaArtista extends JFrame {
 	private JPanel panel_1;
 	private JTextField textDataFalecimento;
 
+	private JTable tabelaArtistas;
+	private DefaultTableModel modeloTabela;
+
 	public JanelaArtista() {
 
 		setTitle("Enciclopédia Interativa da MPB");
@@ -60,15 +67,17 @@ public class JanelaArtista extends JFrame {
 		contentPane.add(painelSuperiorCompleto, BorderLayout.NORTH); // Força o topo a ocupar 100% da largura
 		
 		JPanel panel = new JPanel();
-			panel.setBackground(new Color(240, 240, 240));
+			panel.setBackground(new Color(226, 105, 45));
 			panel.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		painelSuperiorCompleto.add(panel); // Adiciona na linha 1 do topo
 		
 				btnCadastrar = new JButton("Cadastrar");
+				btnCadastrar.setBackground(new Color(249, 203, 157));
 				panel.add(btnCadastrar);
-				btnCadastrar.setFont(new Font("Noto Sans Lisu", Font.BOLD, 20));
+				btnCadastrar.setFont(new Font("Arial", Font.BOLD, 18));
 		
 				btnLimpar = new JButton("Limpar");
+				btnLimpar.setBackground(new Color(249, 203, 157));
 				panel.add(btnLimpar);
 				btnLimpar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -77,30 +86,34 @@ public class JanelaArtista extends JFrame {
 				btnLimpar.setFont(new Font("Noto Sans Lisu", Font.BOLD, 20));
 		
 				btnFechar = new JButton("Fechar");
+				btnFechar.setBackground(new Color(249, 203, 157));
 				panel.add(btnFechar);
-				btnFechar.setFont(new Font("Noto Sans Lisu", Font.BOLD, 20));
+				btnFechar.setFont(new Font("Arial", Font.BOLD, 18));
 			
 			panel_1 = new JPanel();
-			panel_1.setBackground(new Color(240, 240, 240));
+			panel_1.setBackground(new Color(255, 232, 215));
 				painelSuperiorCompleto.add(panel_1); // Adiciona na linha 2 do topo
 			panel_1.setLayout(new BorderLayout(0, 0));
 		
 		JLabel lblEnciclopedia = new JLabel("Enciclopédia Interativa da MPB");
-				lblEnciclopedia.setHorizontalAlignment(SwingConstants.CENTER);
+		lblEnciclopedia.setBackground(new Color(255, 128, 64));
+		lblEnciclopedia.setHorizontalAlignment(SwingConstants.CENTER);
+		lblEnciclopedia.setForeground(new Color(105, 55, 45));
+		lblEnciclopedia.setFont(new Font("Arial", Font.BOLD, 18));
 			panel_1.add(lblEnciclopedia, BorderLayout.CENTER);
-				lblEnciclopedia.setForeground(Color.BLACK);
-				lblEnciclopedia.setFont(new Font("Noto Sans Lisu", Font.BOLD, 30));
+				
 
 		// CORREÇÃO 3: Criamos um sub-painel centralizado dedicado ao seu formulário.
 		// Ele mantém o layout absoluto (null) para que seus campos fiquem na posição que você desenhou.
 		JPanel painelFormulario = new JPanel();
-				painelFormulario.setBackground(new Color(255, 255, 255));
+				painelFormulario.setBackground(new Color(238, 155, 72));
 					painelFormulario.setLayout(null);
 		contentPane.add(painelFormulario, BorderLayout.CENTER); // Preenche automaticamente todo o resto da tela
 				
 		JLabel lblNomeArtista = new JLabel("Nome");
 			lblNomeArtista.setBounds(5, 44, 358, 65); // Ajustado a posição Y relativa ao novo painel
-			lblNomeArtista.setFont(new Font("Noto Sans Lisu", Font.PLAIN, 16));
+			lblNomeArtista.setFont(new Font("Arial", Font.BOLD, 18));
+			lblNomeArtista.setForeground(new Color(105, 55, 45));
 					painelFormulario.add(lblNomeArtista);
 		
 			txtNome = new JTextField();
@@ -110,7 +123,8 @@ public class JanelaArtista extends JFrame {
 
 		JLabel lblDataNascimento = new JLabel("Ano de nascimento");
 			lblDataNascimento.setBounds(5, 120, 358, 65);
-			lblDataNascimento.setFont(new Font("Noto Sans Lisu", Font.PLAIN, 16));
+			lblDataNascimento.setFont(new Font("Arial", Font.BOLD, 18));
+			lblDataNascimento.setForeground(new Color(105, 55, 45));
 					painelFormulario.add(lblDataNascimento);
 								
 				txtDataNasc = new JTextField();
@@ -120,7 +134,8 @@ public class JanelaArtista extends JFrame {
 						
 		JLabel lblLocalNasc = new JLabel("Local de nascimento");
 			lblLocalNasc.setBounds(5, 196, 358, 65);
-			lblLocalNasc.setFont(new Font("Noto Sans Lisu", Font.PLAIN, 16));
+			lblLocalNasc.setFont(new Font("Arial", Font.BOLD, 18));
+			lblLocalNasc.setForeground(new Color(105, 55, 45));
 					painelFormulario.add(lblLocalNasc);
 				
 				txtLocalNasc = new JTextField();
@@ -130,7 +145,8 @@ public class JanelaArtista extends JFrame {
 		
 		JLabel lblQuantAlbuns = new JLabel("Quantidade de álbuns");
 			lblQuantAlbuns.setBounds(5, 272, 358, 65);
-			lblQuantAlbuns.setFont(new Font("Noto Sans Lisu", Font.PLAIN, 16));
+			lblQuantAlbuns.setFont(new Font("Arial", Font.BOLD, 18));
+			lblQuantAlbuns.setForeground(new Color(105, 55, 45));
 					painelFormulario.add(lblQuantAlbuns);
 		
 				txtQuant_albuns = new JTextField();
@@ -140,7 +156,8 @@ public class JanelaArtista extends JFrame {
 		
 		JLabel lblDataFalecimento = new JLabel("Data de falecimento");
 			lblDataFalecimento.setBounds(5, 348, 358, 65);
-			lblDataFalecimento.setFont(new Font("Noto Sans Lisu", Font.PLAIN, 16));
+			lblDataFalecimento.setFont(new Font("Arial", Font.BOLD, 18));
+			lblDataFalecimento.setForeground(new Color(105, 55, 45));
 				painelFormulario.add(lblDataFalecimento);
 		
 		label = new JLabel("");
@@ -157,7 +174,8 @@ public class JanelaArtista extends JFrame {
 
 		JLabel lblAlbum = new JLabel("Álbum mais popular");
 			lblAlbum.setBounds(5, 435, 358, 65);
-			lblAlbum.setFont(new Font("Noto Sans Lisu", Font.PLAIN, 16));
+			lblAlbum.setFont(new Font("Arial", Font.BOLD, 18));
+			lblAlbum.setForeground(new Color(105, 55, 45));
 					painelFormulario.add(lblAlbum);
 		
 				txtAlbum = new JTextField();
@@ -166,25 +184,90 @@ public class JanelaArtista extends JFrame {
 					painelFormulario.add(txtAlbum);
 												
 		JLabel lblArtista = new JLabel("Artista");
-			lblArtista.setBounds(5, 18, 69, 28);
+		lblArtista.setBackground(new Color(240, 240, 240));
 					painelFormulario.add(lblArtista);
-			lblArtista.setHorizontalAlignment(SwingConstants.CENTER);
-			lblArtista.setFont(new Font("Noto Sans Lisu", Font.BOLD, 20));	
-		
+					lblArtista.setBounds(0, 5, 1147, 40);
+					lblArtista.setHorizontalAlignment(SwingConstants.CENTER);
+					lblArtista.setForeground(new Color(102, 0, 0));
+					lblArtista.setFont(new Font("Arial", Font.BOLD, 27));
 				textDataFalecimento = new JTextField();
 				textDataFalecimento.setColumns(10);
 				textDataFalecimento.setBounds(188, 351, 805, 65);
 					painelFormulario.add(textDataFalecimento);
+					
+					// Modelo da tabela
+					String[] colunas = {
+					    "Nome",
+					    "Ano de nascimento",
+					    "Local de nascimento",
+					    "Quantidade de álbuns",
+					    "Data de falecimento",
+					    "Álbum mais popular"
+					};
+
+					modeloTabela = new DefaultTableModel(colunas, 0);
+
+					// Criação da tabela
+					tabelaArtistas = new JTable(modeloTabela);
+
+					// Personalização
+					tabelaArtistas.setFont(new Font("Arial", Font.PLAIN, 13));
+					tabelaArtistas.setRowHeight(25);
+					tabelaArtistas.getTableHeader().setFont(
+					    new Font("Arial", Font.BOLD, 13)
+					);
+					tabelaArtistas.getTableHeader().setBackground(
+					    new Color(248, 205, 196)
+					);
+					tabelaArtistas.getTableHeader().setForeground(
+					    new Color(105, 48, 35)
+					);
+
+					// Adiciona rolagem
+					JScrollPane scrollTabela = new JScrollPane(tabelaArtistas);
+
+					// Posiciona a tabela
+					scrollTabela.setBounds(5, 540, 1110, 200);
+
+					painelFormulario.add(scrollTabela);
 		
 		btnFechar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
 		btnCadastrar.addActionListener(new ActionListener() {
+			
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
+		btnLimpar.setBackground(new Color(248, 205, 196));
+		btnLimpar.setForeground(new Color(105, 48, 35));
+
+		btnFechar.setBackground(new Color(239, 155, 130));
+		btnFechar.setForeground(new Color(105, 48, 35));
+		
+		btnCadastrar.setFocusPainted(false);
+		btnLimpar.setFocusPainted(false);
+		btnFechar.setFocusPainted(false);
 	}
+	
+	public void adicionarArtista(
+		    String nome,
+		    String ano,
+		    String local,
+		    String quantidade,
+		    String falecimento,
+		    String album
+		) {
+		    modeloTabela.addRow(new Object[] {
+		        nome,
+		        ano,
+		        local,
+		        quantidade,
+		        falecimento,
+		        album
+		    });
+		}
 
 	public JButton getBtnCadastrar() {
 		return btnCadastrar;
@@ -244,4 +327,5 @@ public class JanelaArtista extends JFrame {
 	public void fechar() {
 		dispose();
 	}
+	
 }
