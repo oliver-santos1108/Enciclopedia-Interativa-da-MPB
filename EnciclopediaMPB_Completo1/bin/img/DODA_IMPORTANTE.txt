@@ -1,0 +1,6 @@
+DODA se você for add as imagens o arquivo precisa estar com esse nome pra não dar erro:
+- logo.png 
+- icone.png (ícone da janela)
+PRECISA SER PNG e PRECISA ESTAR NESSA PASTA
+
+

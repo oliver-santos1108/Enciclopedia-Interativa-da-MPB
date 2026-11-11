@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8">
+	<title>Manual de uso</title>
+<style>
+body { font-family: SansSerif; font-size: 11pt; margin: 14px; }
+h1,h2 { color: #285b57; }
+th { background: #e3eedd; text-align: left; }
+</style>
+</head>
+<body>
+	
+<h1>Manual de uso - Enciclopédia Interativa da MPB</h1>
+
+<h2>1. Objetivo</h2>
+<p>O sistema permite cadastrar, consultar, editar e excluir artistas da Música Popular Brasileira.</p>
+
+<h2>2. Cadastrar um artista</h2>
+<ol>
+<li>Acesse <b>Cadastro</b>.</li>
+<li>Preencha nome, ano de nascimento, quantidade de álbuns, álbuns e local de nascimento.</li>
+<li>O ano de falecimento é opcional.</li>
+<li>Se desejar, escolha uma fotografia. Ela será reduzida e armazenada no banco.</li>
+<li>Clique em <b>Salvar</b>.</li>
+</ol>
+
+<h2>3. Consultar e editar</h2>
+<p>Acesse <b>Consulta</b>, digite parte do nome e clique em Pesquisar. Para ver todos os artistas, clique em Mostrar todos.
+Clique em uma linha para abrir os dados no formulário. Altere os campos e clique em Salvar para atualizar.</p>
+
+<h2>4. Excluir</h2>
+<p>Selecione um artista na consulta, confirme a exclusão e o registro será removido.</p>
+
+<h2>5. Fotografias</h2>
+<p>As imagens são opcionais. O sistema reduz a imagem mantendo a proporção e grava seus bytes na coluna foto (LONGBLOB).
+A listagem não carrega as fotos; a foto é consultada somente quando o artista é selecionado.</p>
+
+<h2>6. Menu</h2>
+<ul><li><b>Arquivo &gt; Limpar campos:</b> inicia um cadastro vazio.</li>
+<li><b>Arquivo &gt; Sair:</b> encerra o programa.</li>
+<li><b>Ajuda &gt; Sobre:</b> mostra os dados do software.</li>
+<li><b>Ajuda &gt; Manual de uso:</b> abre esta documentação.</li></ul>
+
+<h2>7. Requisitos</h2>
+<ul>
+<li>Java 8 ou superior.</li>
+<li>MySQL em execução.</li>
+<li>Banco mpb e tabela artista.</li>
+<li>MySQL Connector/J adicionado ao Build Path do Eclipse.</li></ul>
+
+<h2>8. Mensagens comuns</h2>
+<table border="1" cellpadding="5" cellspacing="0">
+<tr><th>Problema</th><th>O que verificar</th></tr>
+<tr><td>Access denied</td><td>Usuário e senha configurados em model.Conexao.</td></tr>
+<tr><td>Communications link failure</td><td>Servidor MySQL ligado e porta 3306 disponível.</td></tr>
+<tr><td>Unknown column 'foto'</td><td>Executar o ALTER TABLE indicado no README.</td></tr>
+<tr><td>No suitable driver</td><td>Adicionar o MySQL Connector/J ao Build Path.</td></tr>
+</table>
+</body>
+</html>
