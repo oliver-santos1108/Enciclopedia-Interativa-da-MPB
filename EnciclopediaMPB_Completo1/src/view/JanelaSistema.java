@@ -66,7 +66,7 @@ public class JanelaSistema extends JFrame {
     private final JMenuItem miSair = new JMenuItem("Sair");
     private final JMenuItem miManual = new JMenuItem("Manual de uso");
     private final JMenuItem miSobre = new JMenuItem("Sobre");
-    private FileSelectionListener arquivoListener;
+    
 
     public interface FileSelectionListener { void arquivoSelecionado(java.io.File arquivo); }
 

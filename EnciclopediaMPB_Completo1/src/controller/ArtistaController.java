@@ -14,7 +14,6 @@ import model.ArtistaRepositorio;
 import model.Imagens;
 import view.JanelaSistema;
 
-/** Controller: coordena eventos da View e operações do repositório. */
 public class ArtistaController implements ActionListener, ListSelectionListener {
     private final JanelaSistema view;
     private final ArtistaRepositorio repositorio;
