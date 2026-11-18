@@ -120,7 +120,7 @@ public class JanelaSistema extends JFrame {
         miManual.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_F1, 0));
         ajuda.add(miManual);
         ajuda.add(miSobre);
-        barra.add(arquivo);
+        barra.add(arquivo);  
         barra.add(ajuda);
         return barra;
     }
